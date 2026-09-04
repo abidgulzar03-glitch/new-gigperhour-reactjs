@@ -5,7 +5,7 @@ import HeroSection from "./Component/HeroSection";
 import WaitList from "./Component/WaitList";
 import WhySection from "./Component/WhySection";
 import Compare from "./Component/Compare";
-import HowItWorks from "./Component/HowItWorks";
+import HowitWorks from "./Component/HowitWorks";
 import Launch from "./Component/Launch";
 import Footer from "./Component/Footer";
 
@@ -17,7 +17,7 @@ function App() {
       <WaitList />
       <WhySection/>
       <Compare />
-      <HowItWorks />
+      <HowitWorks />
       <Launch />
       <Footer />
     </>
