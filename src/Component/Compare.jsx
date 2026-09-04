@@ -23,52 +23,52 @@ function Compare() {
 
               <tr>
                 <td className="compare-label">Platform Fee</td>
-                <td className="compare-main">5% flat</td>
-                <td>Up to 20%</td>
+                <td className="compare-main" data-label="GigPerHour">5% flat</td>
+                <td data-label="Others">Up to 20%</td>
               </tr>
 
               <tr>
                 <td className="compare-label">Payment Speed</td>
-                <td className="compare-main">Within 24 hours</td>
-                <td>5–14 business days</td>
+                <td className="compare-main" data-label="GigPerHour">Within 24 hours</td>
+                <td data-label="Others">5–14 business days</td>
               </tr>
 
               <tr>
                 <td className="compare-label">Dispute Review</td>
-                <td className="compare-main">
+                <td className="compare-main" data-label="GigPerHour">
                   <span className="compare-check">✓</span> Human-reviewed
                 </td>
-                <td>
+                <td data-label="Others">
                   <span className="compare-cross">✗</span> Automated
                 </td>
               </tr>
 
               <tr>
                 <td className="compare-label">Freelancer First</td>
-                <td className="compare-main">
+                <td className="compare-main" data-label="GigPerHour">
                   <span className="compare-check">✓</span> Always
                 </td>
-                <td>
+                <td data-label="Others">
                   <span className="compare-cross">✗</span> Client-biased
                 </td>
               </tr>
 
               <tr>
                 <td className="compare-label">Transparent Policy</td>
-                <td className="compare-main">
+                <td className="compare-main" data-label="GigPerHour">
                   <span className="compare-check">✓</span> Clear & stable
                 </td>
-                <td>
+                <td data-label="Others">
                   <span className="compare-cross">✗</span> Frequent changes
                 </td>
               </tr>
 
               <tr>
                 <td className="compare-label">Early Access Perks</td>
-                <td className="compare-main">
+                <td className="compare-main" data-label="GigPerHour">
                   <span className="compare-check">✓</span> Lifetime discount
                 </td>
-                <td>
+                <td data-label="Others">
                   <span className="compare-cross">✗</span> None
                 </td>
               </tr>
