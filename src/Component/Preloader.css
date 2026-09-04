@@ -1,0 +1,173 @@
+.pl-stage {
+  --pl-bg: #12151f;
+  --pl-panel: #1b2333;
+  --pl-line: #2a3345;
+  --pl-accent: #e8632a;
+  --pl-text: #f2efe9;
+  --pl-muted: #6b7280;
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--pl-bg);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  animation: pl-stage-in 0.5s ease both;
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.pl-exit {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+@keyframes pl-stage-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Soft radial glow anchored behind the hexagon */
+.pl-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    480px circle at 50% 50%,
+    rgba(232, 99, 42, 0.16),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Faint structural grid, barely-there depth cue */
+.pl-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--pl-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pl-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.14;
+  mask-image: radial-gradient(circle at 50% 50%, #000 0%, transparent 75%);
+  pointer-events: none;
+}
+
+.pl-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.pl-hex-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.pl-orbit-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--pl-orbit-rotation, 0deg));
+  transition: transform 0.05s linear;
+}
+
+.pl-orbit-ring {
+  fill: none;
+  stroke: var(--pl-muted);
+  stroke-width: 1;
+  stroke-linecap: round;
+  opacity: 0.5;
+}
+
+.pl-hex-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--pl-rotation, 0deg));
+  transition: transform 0.05s linear;
+}
+
+.pl-node {
+  fill: var(--pl-accent);
+}
+
+.pl-ring {
+  fill: none;
+  stroke: var(--pl-line);
+  stroke-width: 1;
+}
+
+.pl-poly {
+  fill: none;
+  stroke: var(--pl-accent);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.pl-count {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--pl-text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.pl-status {
+  font-size: 13px;
+  color: var(--pl-muted);
+  letter-spacing: 0.01em;
+}
+
+.pl-track {
+  width: 180px;
+  height: 2px;
+  background: var(--pl-panel);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.pl-track-fill {
+  height: 100%;
+  background: var(--pl-accent);
+  width: var(--pl-progress, 0%);
+  transition: width 0.05s linear;
+}
+
+@media (max-width: 480px) {
+  .pl-hex-wrap {
+    width: 110px;
+    height: 110px;
+  }
+  .pl-count {
+    font-size: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-stage,
+  .pl-hex-svg,
+  .pl-orbit-svg {
+    animation: none;
+    transition: none;
+  }
+}

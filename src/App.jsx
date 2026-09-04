@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
@@ -11,15 +11,22 @@ import Compare from "./Component/Compare";
 import HowitWorks from "./Component/HowitWorks";
 import Launch from "./Component/Launch";
 import Footer from "./Component/Footer";
+import Preloader from "./Component/PreLoader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     AOS.init({
-      duration: 800, // how long each animation takes (ms)
-      once: true,    // animate only once, not every time you scroll past it
-      offset: 80,    // start animation slightly before element fully enters view
+      duration: 800,
+      once: true,
+      offset: 80,
     });
   }, []);
+
+  if (loading) {
+    return <Preloader onComplete={() => setLoading(false)} />;
+  }
 
   return (
     <>
