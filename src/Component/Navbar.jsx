@@ -8,9 +8,7 @@ function Navbar() {
       </div>
 
       <div className="right-box">
-        <div className="right-main1">
-          Beta Coming Soon
-        </div>
+        <div className="right-main1">Beta Coming Soon</div>
         <a href="#waitlist-section" className="btn-right">
           Join Waitlist
         </a>
